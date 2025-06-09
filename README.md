@@ -3,9 +3,8 @@
 
 
 ## Search Strategy
-- This app will search by player name, card set, and condition so that card pricing data may be accurately compared
-- For example: This app will be used to search for "Luke Doncic Prizm Rookie Card PSA 10" so that card prices are being compared across identical card types and conditions rather than simply searching for "Luka Doncic Rookie Card"
-as the card set and condition will vary in a way that prevents true consistency of data
+- This app is designed to search eBay using highly specific criteria — including player name, card set, and card condition — to ensure that the pricing data collected is consistent and comparable
+- For example, instead of broadly searching for "Luka Doncic Rookie Card" (which would return listings across many sets and conditions), the app might target "Luka Doncic Prizm Rookie Card PSA 10" to isolate only identical cards. This level of specificity helps maintain data integrity and allows for more accurate price comparisons across listings
 
 ## Notes
 - The eBay Production API has a rate limit of **5,000 calls per day** for analytics endpoints.
