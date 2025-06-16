@@ -8,10 +8,6 @@ EBAY_APP_ID = os.getenv('EBAY_APP_ID')
 EBAY_CERT_ID = os.getenv('EBAY_CERT_ID')
 EBAY_DEV_ID = os.getenv('EBAY_DEV_ID')
 
-# MongoDB Configuration
-MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
-MONGO_DB = 'card_prices'
-
 # Card Configuration
 TRACKED_CARDS = [
     "luke doncic prizm rookie psa 10",

@@ -1,7 +1,7 @@
 from ebaysdk.finding import Connection
 from datetime import datetime
 import pandas as pd
-from pymongo import MongoClient
+import sqlite3
 import config
 import time
 import logging
@@ -17,9 +17,25 @@ class CardDataPipeline:
             config_file=None,
             debug=True
         )
-        self.mongo_client = MongoClient(config.MONGO_URI)
-        self.db = self.mongo_client[config.MONGO_DB]
-        self.collection = self.db.card_prices
+        self.conn = sqlite3.connect('card_prices.db')
+        self.create_tables()
+
+    def create_tables(self):
+        cursor = self.conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS card_prices (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                card_name TEXT NOT NULL,
+                title TEXT NOT NULL,
+                price REAL NOT NULL,
+                currency TEXT NOT NULL,
+                listing_url TEXT NOT NULL,
+                timestamp DATETIME NOT NULL,
+                condition TEXT,
+                psa_grade INTEGER
+            )
+        ''')
+        self.conn.commit()
 
     def extract_psa_grade(self, title):
         # Common patterns for PSA grades in titles
@@ -77,30 +93,52 @@ class CardDataPipeline:
         for card in config.TRACKED_CARDS:
             data = self.fetch_ebay_data(card)
             if data:
-                self.collection.insert_many(data)
+                cursor = self.conn.cursor()
+                for item in data:
+                    cursor.execute('''
+                        INSERT INTO card_prices 
+                        (card_name, title, price, currency, listing_url, timestamp, condition, psa_grade)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    ''', (
+                        item['card_name'],
+                        item['title'],
+                        item['price'],
+                        item['currency'],
+                        item['listing_url'],
+                        item['timestamp'],
+                        item['condition'],
+                        item['psa_grade']
+                    ))
+                self.conn.commit()
             time.sleep(1)  # Rate limiting
 
     def get_price_history(self, card_name):
-        pipeline = [
-            {'$match': {'card_name': card_name}},
-            {'$sort': {'timestamp': 1}},
-            {'$project': {
-                'price': 1,
-                'timestamp': 1,
-                'psa_grade': 1,
-                '_id': 0
-            }}
-        ]
-        return list(self.collection.aggregate(pipeline))
+        cursor = self.conn.cursor()
+        cursor.execute('''
+            SELECT price, timestamp, psa_grade
+            FROM card_prices
+            WHERE card_name = ?
+            ORDER BY timestamp ASC
+        ''', (card_name,))
+        return [{'price': row[0], 'timestamp': row[1], 'psa_grade': row[2]} for row in cursor.fetchall()]
 
     def get_latest_prices(self):
-        pipeline = [
-            {'$sort': {'timestamp': -1}},
-            {'$group': {
-                '_id': '$card_name',
-                'latest_price': {'$first': '$price'},
-                'timestamp': {'$first': '$timestamp'},
-                'psa_grade': {'$first': '$psa_grade'}
-            }}
-        ]
-        return list(self.collection.aggregate(pipeline)) 
+        cursor = self.conn.cursor()
+        cursor.execute('''
+            SELECT card_name, price, timestamp, psa_grade
+            FROM card_prices
+            WHERE (card_name, timestamp) IN (
+                SELECT card_name, MAX(timestamp)
+                FROM card_prices
+                GROUP BY card_name
+            )
+        ''')
+        return [{
+            '_id': row[0],
+            'latest_price': row[1],
+            'timestamp': row[2],
+            'psa_grade': row[3]
+        } for row in cursor.fetchall()]
+
+    def __del__(self):
+        self.conn.close() 
