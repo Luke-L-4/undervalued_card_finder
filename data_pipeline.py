@@ -6,14 +6,24 @@ import config
 import time
 import logging
 import re
+import os
+from dotenv import load_dotenv
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class CardDataPipeline:
     def __init__(self):
+        # Load environment variables
+        load_dotenv()
+        
+        # Validate eBay credentials
+        self.app_id = os.getenv('EBAY_APP_ID')
+        if not self.app_id:
+            raise ValueError("EBAY_APP_ID not found in environment variables. Please check your .env file.")
+            
         self.api = Connection(
-            appid=config.EBAY_APP_ID,
+            appid=self.app_id,
             config_file=None,
             debug=True
         )
@@ -54,6 +64,7 @@ class CardDataPipeline:
 
     def fetch_ebay_data(self, card_name):
         try:
+            logger.info(f"Fetching data for card: {card_name}")
             response = self.api.execute('findItemsAdvanced', {
                 'keywords': card_name,
                 'itemFilter': [
@@ -66,6 +77,7 @@ class CardDataPipeline:
             if response.reply.ack == 'Success':
                 items = response.reply.searchResult._count
                 if items == '0':
+                    logger.warning(f"No items found for {card_name}")
                     return None
 
                 results = []
@@ -83,6 +95,7 @@ class CardDataPipeline:
                         'condition': item.condition.conditionDisplayName if hasattr(item, 'condition') else 'Unknown',
                         'psa_grade': psa_grade
                     })
+                logger.info(f"Found {len(results)} items for {card_name}")
                 return results
             return None
         except Exception as e:

@@ -10,7 +10,7 @@ EBAY_DEV_ID = os.getenv('EBAY_DEV_ID')
 
 # Card Configuration
 TRACKED_CARDS = [
-    "luke doncic prizm rookie psa 10",
+    "luka doncic prizm rookie psa 10",
     # Add more cards here
 ]
 
