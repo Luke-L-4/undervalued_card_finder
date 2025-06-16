@@ -3,3 +3,9 @@ pandas
 sqlalchemy
 python-dotenv
 schedule
+pymongo
+flask
+plotly
+ebaysdk
+python-dateutil
+gunicorn
