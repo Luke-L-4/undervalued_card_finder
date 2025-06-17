@@ -20,27 +20,26 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def setup_database():
-    """Create the database and table if they don't exist"""
-    try:
-        conn = sqlite3.connect('card_prices.db')
-        cursor = conn.cursor()
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS card_prices (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                card_name TEXT NOT NULL,
-                title TEXT NOT NULL,
-                price REAL NOT NULL,
-                sale_date TEXT,
-                listing_url TEXT NOT NULL,
-                timestamp DATETIME NOT NULL
-            )
-        ''')
-        conn.commit()
-        logger.info("Database setup completed successfully")
-        return conn
-    except Exception as e:
-        logger.error(f"Error setting up database: {str(e)}")
-        raise
+    """Set up SQLite database with proper schema"""
+    conn = sqlite3.connect('card_prices.db')
+    cursor = conn.cursor()
+    
+    # Create table with proper column types
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS card_prices (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            card_name TEXT NOT NULL,
+            title TEXT NOT NULL,
+            price REAL NOT NULL,
+            sale_date TEXT,  # Allow NULL sale dates
+            listing_url TEXT NOT NULL,
+            timestamp TEXT NOT NULL
+        )
+    ''')
+    
+    conn.commit()
+    logger.info("Database setup completed successfully")
+    return conn
 
 def is_within_six_months(date_text):
     """Check if the sale date is within the last 6 months"""
@@ -79,146 +78,128 @@ def is_within_six_months(date_text):
         return False
 
 def get_ebay_sales():
-    """Scrape eBay for Luka Doncic PSA 10 sales"""
+    """Scrape eBay for Victor Wembanyama #136 Silver Prizm RC PSA 10 sales"""
+    print("Starting scraper...")
     # Set up the request
-    url = "https://www.ebay.com/sch/i.html?_nkw=luka+doncic+prizm+rookie+psa+10&_sacat=0&LH_Complete=1&LH_Sold=1"
+    url = "https://www.ebay.com/sch/i.html?_nkw=victor+webanyama+prizm+%23136+silver+prizm+psa+10+rc&_sacat=0&_from=R40&_trksid=m570.l1313&_odkw=victor+webanyama+prizm+%23+136+silver+prizm+psa+10+rc&_osacat=0&LH_Complete=1&LH_Sold=1"
+    print(f"Search URL: {url}")
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'Accept-Language': 'en-US,en;q=0.9',
         'Accept-Encoding': 'gzip, deflate, br',
         'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Cache-Control': 'max-age=0',
+        'DNT': '1'
     }
 
     try:
         # Make the request
+        print("Making request to eBay...")
         logger.info("Fetching eBay sales data...")
         response = requests.get(url, headers=headers)
         response.raise_for_status()
+        print(f"Response status code: {response.status_code}")
         logger.info(f"Response status code: {response.status_code}")
 
         # Parse the HTML
+        print("Parsing HTML response...")
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # Find all sold items
-        items = soup.find_all('div', {'class': 's-item__info'})
+        # Find all sold items using the correct selector
+        items = soup.select('li.s-item')
+        print(f"Found {len(items)} items")
         logger.info(f"Found {len(items)} items")
 
-        # Print raw HTML of the first item for inspection
-        if items:
-            print("Raw HTML of the first item:")
-            print(items[0])
-
-        # Process each item
-        conn = setup_database()
+        # Connect to database
+        conn = sqlite3.connect('card_prices.db')
         cursor = conn.cursor()
-        items_processed = 0
-        items_added = 0
         
+        # Process each item
         for item in items:
             try:
                 # Get title
-                title_elem = item.find('div', {'class': 's-item__title'})
+                title_elem = item.select_one('div.s-item__title')
                 if not title_elem:
-                    logger.debug("Skipping item: No title found")
-                    print("Skipping item: No title found")
                     continue
                 title = title_elem.text.strip()
-                logger.debug(f"Processing item: {title}")
-                
-                # Skip if not PSA 10
-                if not re.search(r'PSA\s*10!?', title.upper()):
-                    logger.debug(f"Skipping item: Not PSA 10 - {title}")
-                    print(f"Skipping item: Not PSA 10 - {title}")
-                    continue
-                
+                print(f"Processing item: {title}")
+
                 # Get price
-                price_elem = item.find('span', {'class': 's-item__price'})
+                price_elem = item.select_one('span.s-item__price')
                 if not price_elem:
-                    logger.debug("Skipping item: No price found")
-                    print(f"Skipping item: No price found - {title}")
                     continue
-                price_text = price_elem.text.strip().replace('$', '').replace(',', '')
-                try:
-                    price = float(price_text)
-                except ValueError:
-                    logger.warning(f"Could not parse price: {price_text}")
-                    print(f"Skipping item: Could not parse price - {title} - {price_text}")
-                    continue
-                
+                price_text = price_elem.text.strip()
+                price = float(price_text.replace('$', '').replace(',', ''))
+                print(f"Price: ${price}")
+
                 # Get sale date
-                date_elem = item.find('span', {'class': 's-item__caption--signal'})
-                if not date_elem:
-                    logger.debug("Skipping item: No date found")
-                    print(f"Skipping item: No date found - {title}")
-                    print(f"Raw HTML for date element: {item.find('span', {'class': 's-item__caption--signal'})}")
-                    print(f"Raw HTML for entire item: {item}")
+                date_elem = item.select_one('span.s-item__caption--signal')
+                sale_date = None
+                if date_elem:
+                    date_text = date_elem.text.strip()
+                    if 'Sold' in date_text:
+                        # Extract the date part after "Sold"
+                        date_text = date_text.replace('Sold', '').strip()
+                        try:
+                            # Parse the date (format: "MMM DD, YYYY")
+                            parsed_date = datetime.strptime(date_text, '%b %d, %Y')
+                            sale_date = parsed_date
+                            print(f"Parsed sale date: {sale_date}")
+                        except ValueError as e:
+                            print(f"Could not parse date '{date_text}': {str(e)}")
+                print(f"Sale date: {sale_date}")
+
+                # Skip items without a sale date
+                if not sale_date:
+                    print(f"Skipping item: No sale date found - {title}")
                     continue
-                sale_date = date_elem.text.strip()
-                # Strip 'Sold' prefix if present
-                if sale_date.startswith('Sold'):
-                    sale_date = sale_date.replace('Sold', '').strip()
-                # Parse the date using datetime.strptime
-                try:
-                    parsed_date = datetime.strptime(sale_date, '%b %d, %Y')
-                    sale_date = parsed_date.strftime('%Y-%m-%d')
-                except ValueError:
-                    logger.warning(f"Could not parse date format: {sale_date}")
-                    print(f"Skipping item: Could not parse date - {title} - {sale_date}")
-                    continue
-                
-                # Compare the parsed date with the current date
-                now = datetime.now()
-                six_months_ago = now - timedelta(days=180)
-                if parsed_date < six_months_ago:
-                    logger.info(f"Skipping item older than 6 months: {sale_date}")
-                    print(f"Skipping item: Older than 6 months - {title} - {sale_date}")
-                    continue
-                
-                # Get URL
-                url_elem = item.find('a', {'class': 's-item__link'})
-                if not url_elem:
-                    logger.debug("Skipping item: No URL found")
+
+                # Get listing URL
+                link_elem = item.select_one('a.s-item__link')
+                listing_url = link_elem['href'] if link_elem else None
+                print(f"URL: {listing_url}")
+
+                # Skip items without a URL
+                if not listing_url:
                     print(f"Skipping item: No URL found - {title}")
                     continue
-                listing_url = url_elem['href']
-                
-                # Store in database
+
+                # Add to database
                 cursor.execute('''
                     INSERT INTO card_prices 
                     (card_name, title, price, sale_date, listing_url, timestamp)
                     VALUES (?, ?, ?, ?, ?, ?)
                 ''', (
-                    'luka doncic prizm rookie psa 10',
+                    'victor wembanyama prizm #136 silver prizm psa 10 rc',
                     title,
                     price,
-                    sale_date,
+                    sale_date.strftime('%Y-%m-%d'),
                     listing_url,
-                    datetime.utcnow()
+                    datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
                 ))
-                
-                items_added += 1
-                logger.info(f"Added sale: {title} at ${price} on {sale_date}")
-                print(f"Added sale: {title} at ${price} on {sale_date}")
-                
+                print(f"Added to database: {title}")
+
             except Exception as e:
                 logger.error(f"Error processing item: {str(e)}")
                 print(f"Error processing item: {str(e)}")
                 continue
-            finally:
-                items_processed += 1
-        
+
+        # Commit changes
         conn.commit()
         conn.close()
-        logger.info(f"Finished processing sales data. Processed {items_processed} items, added {items_added} items to database.")
-        
+        print(f"Finished processing sales data. Processed {len(items)} items.")
+        logger.info(f"Finished processing sales data. Processed {len(items)} items.")
+
     except Exception as e:
-        logger.error(f"Error fetching data: {str(e)}")
+        logger.error(f"Error fetching eBay data: {str(e)}")
+        print(f"Error fetching eBay data: {str(e)}")
         raise
 
 if __name__ == "__main__":
-    try:
-        get_ebay_sales()
-    except Exception as e:
-        logger.error(f"Script failed: {str(e)}")
-        sys.exit(1) 
+    get_ebay_sales() 
