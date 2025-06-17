@@ -1,0 +1,350 @@
+2025-06-16 18:51:38,394 - INFO - Fetching eBay sales data...
+2025-06-16 18:51:39,267 - INFO - Response status code: 200
+2025-06-16 18:51:39,534 - INFO - Found 62 items
+2025-06-16 18:51:39,534 - INFO - Database setup completed successfully
+2025-06-16 18:51:39,546 - INFO - Finished processing sales data. Processed 62 items, added 0 items to database.
+2025-06-16 18:56:26,440 - INFO - Fetching eBay sales data...
+2025-06-16 18:56:27,182 - INFO - Response status code: 200
+2025-06-16 18:56:27,423 - INFO - Found 62 items
+2025-06-16 18:56:27,423 - INFO - Database setup completed successfully
+2025-06-16 18:56:27,455 - INFO - Finished processing sales data. Processed 62 items, added 0 items to database.
+2025-06-16 19:05:19,967 - INFO - Fetching eBay sales data...
+2025-06-16 19:05:20,847 - INFO - Response status code: 200
+2025-06-16 19:05:21,059 - INFO - Found 62 items
+2025-06-16 19:05:21,059 - INFO - Database setup completed successfully
+2025-06-16 19:05:21,135 - INFO - Finished processing sales data. Processed 62 items, added 0 items to database.
+2025-06-16 19:13:52,993 - INFO - Fetching eBay sales data...
+2025-06-16 19:13:53,887 - INFO - Response status code: 200
+2025-06-16 19:13:54,113 - INFO - Found 62 items
+2025-06-16 19:13:54,113 - INFO - Database setup completed successfully
+2025-06-16 19:13:54,311 - INFO - Finished processing sales data. Processed 62 items, added 0 items to database.
+2025-06-16 19:22:28,697 - INFO - Fetching eBay sales data...
+2025-06-16 19:22:29,497 - INFO - Response status code: 200
+2025-06-16 19:22:29,723 - INFO - Found 62 items
+2025-06-16 19:22:29,723 - INFO - Database setup completed successfully
+2025-06-16 19:22:29,723 - WARNING - Could not parse date format: Sold  Jun 16, 2025
+2025-06-16 19:22:29,723 - INFO - Skipping item older than 6 months: Sold  Jun 16, 2025
+2025-06-16 19:22:29,723 - WARNING - Could not parse date format: Sold  Jun 16, 2025
+2025-06-16 19:22:29,731 - INFO - Skipping item older than 6 months: Sold  Jun 16, 2025
+2025-06-16 19:22:29,731 - WARNING - Could not parse date format: Sold  Jun 15, 2025
+2025-06-16 19:22:29,731 - INFO - Skipping item older than 6 months: Sold  Jun 15, 2025
+2025-06-16 19:22:29,733 - WARNING - Could not parse date format: Sold  Jun 15, 2025
+2025-06-16 19:22:29,733 - INFO - Skipping item older than 6 months: Sold  Jun 15, 2025
+2025-06-16 19:22:29,733 - WARNING - Could not parse date format: Sold  Jun 15, 2025
+2025-06-16 19:22:29,733 - INFO - Skipping item older than 6 months: Sold  Jun 15, 2025
+2025-06-16 19:22:29,733 - WARNING - Could not parse date format: Sold  Jun 15, 2025
+2025-06-16 19:22:29,733 - INFO - Skipping item older than 6 months: Sold  Jun 15, 2025
+2025-06-16 19:22:29,738 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,738 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,738 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,739 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,739 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,739 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,739 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,739 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,744 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,744 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,744 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,746 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,748 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,748 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,748 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,748 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,748 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,748 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,754 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,755 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,755 - WARNING - Could not parse date format: Sold  Jun 14, 2025
+2025-06-16 19:22:29,755 - INFO - Skipping item older than 6 months: Sold  Jun 14, 2025
+2025-06-16 19:22:29,755 - WARNING - Could not parse date format: Sold  Jun 12, 2025
+2025-06-16 19:22:29,755 - INFO - Skipping item older than 6 months: Sold  Jun 12, 2025
+2025-06-16 19:22:29,755 - WARNING - Could not parse date format: Sold  Jun 12, 2025
+2025-06-16 19:22:29,755 - INFO - Skipping item older than 6 months: Sold  Jun 12, 2025
+2025-06-16 19:22:29,755 - WARNING - Could not parse date format: Sold  Jun 12, 2025
+2025-06-16 19:22:29,755 - INFO - Skipping item older than 6 months: Sold  Jun 12, 2025
+2025-06-16 19:22:29,763 - WARNING - Could not parse date format: Sold  Jun 12, 2025
+2025-06-16 19:22:29,763 - INFO - Skipping item older than 6 months: Sold  Jun 12, 2025
+2025-06-16 19:22:29,764 - WARNING - Could not parse date format: Sold  Feb 28, 2025
+2025-06-16 19:22:29,764 - INFO - Skipping item older than 6 months: Sold  Feb 28, 2025
+2025-06-16 19:22:29,764 - WARNING - Could not parse date format: Sold  Jun 12, 2025
+2025-06-16 19:22:29,764 - INFO - Skipping item older than 6 months: Sold  Jun 12, 2025
+2025-06-16 19:22:29,764 - WARNING - Could not parse date format: Sold  Jun 11, 2025
+2025-06-16 19:22:29,764 - INFO - Skipping item older than 6 months: Sold  Jun 11, 2025
+2025-06-16 19:22:29,769 - WARNING - Could not parse date format: Sold  Jun 11, 2025
+2025-06-16 19:22:29,769 - INFO - Skipping item older than 6 months: Sold  Jun 11, 2025
+2025-06-16 19:22:29,769 - WARNING - Could not parse date format: Sold  Jun 11, 2025
+2025-06-16 19:22:29,769 - INFO - Skipping item older than 6 months: Sold  Jun 11, 2025
+2025-06-16 19:22:29,773 - WARNING - Could not parse date format: Sold  Jun 10, 2025
+2025-06-16 19:22:29,773 - INFO - Skipping item older than 6 months: Sold  Jun 10, 2025
+2025-06-16 19:22:29,773 - WARNING - Could not parse date format: Sold  Jun 10, 2025
+2025-06-16 19:22:29,773 - INFO - Skipping item older than 6 months: Sold  Jun 10, 2025
+2025-06-16 19:22:29,773 - WARNING - Could not parse date format: Sold  Jun 10, 2025
+2025-06-16 19:22:29,773 - INFO - Skipping item older than 6 months: Sold  Jun 10, 2025
+2025-06-16 19:22:29,773 - WARNING - Could not parse date format: Sold  Jun 10, 2025
+2025-06-16 19:22:29,778 - INFO - Skipping item older than 6 months: Sold  Jun 10, 2025
+2025-06-16 19:22:29,778 - WARNING - Could not parse date format: Sold  Jun 9, 2025
+2025-06-16 19:22:29,778 - INFO - Skipping item older than 6 months: Sold  Jun 9, 2025
+2025-06-16 19:22:29,778 - WARNING - Could not parse date format: Sold  Jun 9, 2025
+2025-06-16 19:22:29,781 - INFO - Skipping item older than 6 months: Sold  Jun 9, 2025
+2025-06-16 19:22:29,781 - WARNING - Could not parse date format: Sold  Jun 9, 2025
+2025-06-16 19:22:29,781 - INFO - Skipping item older than 6 months: Sold  Jun 9, 2025
+2025-06-16 19:22:29,781 - WARNING - Could not parse date format: Sold  Jun 9, 2025
+2025-06-16 19:22:29,781 - INFO - Skipping item older than 6 months: Sold  Jun 9, 2025
+2025-06-16 19:22:29,781 - WARNING - Could not parse date format: Sold  Jun 8, 2025
+2025-06-16 19:22:29,781 - INFO - Skipping item older than 6 months: Sold  Jun 8, 2025
+2025-06-16 19:22:29,781 - WARNING - Could not parse date format: Sold  Jun 8, 2025
+2025-06-16 19:22:29,781 - INFO - Skipping item older than 6 months: Sold  Jun 8, 2025
+2025-06-16 19:22:29,781 - WARNING - Could not parse date format: Sold  Jun 8, 2025
+2025-06-16 19:22:29,781 - INFO - Skipping item older than 6 months: Sold  Jun 8, 2025
+2025-06-16 19:22:29,789 - WARNING - Could not parse date format: Sold  Jun 8, 2025
+2025-06-16 19:22:29,789 - INFO - Skipping item older than 6 months: Sold  Jun 8, 2025
+2025-06-16 19:22:29,789 - WARNING - Could not parse date format: Sold  Jun 8, 2025
+2025-06-16 19:22:29,789 - INFO - Skipping item older than 6 months: Sold  Jun 8, 2025
+2025-06-16 19:22:29,789 - WARNING - Could not parse date format: Sold  Jun 7, 2025
+2025-06-16 19:22:29,789 - INFO - Skipping item older than 6 months: Sold  Jun 7, 2025
+2025-06-16 19:22:29,789 - WARNING - Could not parse date format: Sold  Jun 7, 2025
+2025-06-16 19:22:29,789 - INFO - Skipping item older than 6 months: Sold  Jun 7, 2025
+2025-06-16 19:22:29,789 - WARNING - Could not parse date format: Sold  Jun 6, 2025
+2025-06-16 19:22:29,789 - INFO - Skipping item older than 6 months: Sold  Jun 6, 2025
+2025-06-16 19:22:29,796 - WARNING - Could not parse date format: Sold  Jun 6, 2025
+2025-06-16 19:22:29,796 - INFO - Skipping item older than 6 months: Sold  Jun 6, 2025
+2025-06-16 19:22:29,796 - WARNING - Could not parse date format: Sold  Jun 6, 2025
+2025-06-16 19:22:29,796 - INFO - Skipping item older than 6 months: Sold  Jun 6, 2025
+2025-06-16 19:22:29,797 - WARNING - Could not parse date format: Sold  Jun 5, 2025
+2025-06-16 19:22:29,797 - INFO - Skipping item older than 6 months: Sold  Jun 5, 2025
+2025-06-16 19:22:29,797 - WARNING - Could not parse date format: Sold  Jun 5, 2025
+2025-06-16 19:22:29,797 - INFO - Skipping item older than 6 months: Sold  Jun 5, 2025
+2025-06-16 19:22:29,797 - WARNING - Could not parse date format: Sold  Jun 5, 2025
+2025-06-16 19:22:29,797 - INFO - Skipping item older than 6 months: Sold  Jun 5, 2025
+2025-06-16 19:22:29,802 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,802 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,802 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,802 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,805 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,806 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,806 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,806 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,806 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,810 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,810 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,810 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,810 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,812 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,813 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,813 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,814 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,814 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,816 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,816 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,816 - WARNING - Could not parse date format: Sold  Jun 4, 2025
+2025-06-16 19:22:29,816 - INFO - Skipping item older than 6 months: Sold  Jun 4, 2025
+2025-06-16 19:22:29,816 - WARNING - Could not parse date format: Sold  Jun 3, 2025
+2025-06-16 19:22:29,816 - INFO - Skipping item older than 6 months: Sold  Jun 3, 2025
+2025-06-16 19:22:29,816 - WARNING - Could not parse date format: Sold  Jun 3, 2025
+2025-06-16 19:22:29,816 - INFO - Skipping item older than 6 months: Sold  Jun 3, 2025
+2025-06-16 19:22:29,824 - INFO - Finished processing sales data. Processed 62 items, added 0 items to database.
+2025-06-16 19:23:48,212 - INFO - Fetching eBay sales data...
+2025-06-16 19:23:49,083 - INFO - Response status code: 200
+2025-06-16 19:23:49,311 - INFO - Found 62 items
+2025-06-16 19:23:49,314 - INFO - Database setup completed successfully
+2025-06-16 19:23:49,316 - WARNING - Could not parse date format: Jun 16, 2025
+2025-06-16 19:23:49,316 - INFO - Skipping item older than 6 months: Jun 16, 2025
+2025-06-16 19:23:49,316 - WARNING - Could not parse date format: Jun 16, 2025
+2025-06-16 19:23:49,316 - INFO - Skipping item older than 6 months: Jun 16, 2025
+2025-06-16 19:23:49,317 - WARNING - Could not parse date format: Jun 15, 2025
+2025-06-16 19:23:49,319 - INFO - Skipping item older than 6 months: Jun 15, 2025
+2025-06-16 19:23:49,320 - WARNING - Could not parse date format: Jun 15, 2025
+2025-06-16 19:23:49,321 - INFO - Skipping item older than 6 months: Jun 15, 2025
+2025-06-16 19:23:49,322 - WARNING - Could not parse date format: Jun 15, 2025
+2025-06-16 19:23:49,322 - INFO - Skipping item older than 6 months: Jun 15, 2025
+2025-06-16 19:23:49,322 - WARNING - Could not parse date format: Jun 15, 2025
+2025-06-16 19:23:49,325 - INFO - Skipping item older than 6 months: Jun 15, 2025
+2025-06-16 19:23:49,326 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,326 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,327 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,327 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,328 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,330 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,330 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,332 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,334 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,334 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,334 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,335 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,336 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,337 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,338 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,338 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,338 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,338 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,338 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,342 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,342 - WARNING - Could not parse date format: Jun 14, 2025
+2025-06-16 19:23:49,342 - INFO - Skipping item older than 6 months: Jun 14, 2025
+2025-06-16 19:23:49,343 - WARNING - Could not parse date format: Jun 12, 2025
+2025-06-16 19:23:49,343 - INFO - Skipping item older than 6 months: Jun 12, 2025
+2025-06-16 19:23:49,344 - WARNING - Could not parse date format: Jun 12, 2025
+2025-06-16 19:23:49,344 - INFO - Skipping item older than 6 months: Jun 12, 2025
+2025-06-16 19:23:49,344 - WARNING - Could not parse date format: Jun 12, 2025
+2025-06-16 19:23:49,344 - INFO - Skipping item older than 6 months: Jun 12, 2025
+2025-06-16 19:23:49,345 - WARNING - Could not parse date format: Jun 12, 2025
+2025-06-16 19:23:49,346 - INFO - Skipping item older than 6 months: Jun 12, 2025
+2025-06-16 19:23:49,348 - WARNING - Could not parse date format: Feb 28, 2025
+2025-06-16 19:23:49,348 - INFO - Skipping item older than 6 months: Feb 28, 2025
+2025-06-16 19:23:49,348 - WARNING - Could not parse date format: Jun 12, 2025
+2025-06-16 19:23:49,348 - INFO - Skipping item older than 6 months: Jun 12, 2025
+2025-06-16 19:23:49,348 - WARNING - Could not parse date format: Jun 11, 2025
+2025-06-16 19:23:49,348 - INFO - Skipping item older than 6 months: Jun 11, 2025
+2025-06-16 19:23:49,348 - WARNING - Could not parse date format: Jun 11, 2025
+2025-06-16 19:23:49,351 - INFO - Skipping item older than 6 months: Jun 11, 2025
+2025-06-16 19:23:49,352 - WARNING - Could not parse date format: Jun 11, 2025
+2025-06-16 19:23:49,352 - INFO - Skipping item older than 6 months: Jun 11, 2025
+2025-06-16 19:23:49,354 - WARNING - Could not parse date format: Jun 10, 2025
+2025-06-16 19:23:49,355 - INFO - Skipping item older than 6 months: Jun 10, 2025
+2025-06-16 19:23:49,355 - WARNING - Could not parse date format: Jun 10, 2025
+2025-06-16 19:23:49,357 - INFO - Skipping item older than 6 months: Jun 10, 2025
+2025-06-16 19:23:49,357 - WARNING - Could not parse date format: Jun 10, 2025
+2025-06-16 19:23:49,358 - INFO - Skipping item older than 6 months: Jun 10, 2025
+2025-06-16 19:23:49,358 - WARNING - Could not parse date format: Jun 10, 2025
+2025-06-16 19:23:49,358 - INFO - Skipping item older than 6 months: Jun 10, 2025
+2025-06-16 19:23:49,359 - WARNING - Could not parse date format: Jun 9, 2025
+2025-06-16 19:23:49,359 - INFO - Skipping item older than 6 months: Jun 9, 2025
+2025-06-16 19:23:49,360 - WARNING - Could not parse date format: Jun 9, 2025
+2025-06-16 19:23:49,361 - INFO - Skipping item older than 6 months: Jun 9, 2025
+2025-06-16 19:23:49,361 - WARNING - Could not parse date format: Jun 9, 2025
+2025-06-16 19:23:49,361 - INFO - Skipping item older than 6 months: Jun 9, 2025
+2025-06-16 19:23:49,363 - WARNING - Could not parse date format: Jun 9, 2025
+2025-06-16 19:23:49,363 - INFO - Skipping item older than 6 months: Jun 9, 2025
+2025-06-16 19:23:49,365 - WARNING - Could not parse date format: Jun 8, 2025
+2025-06-16 19:23:49,365 - INFO - Skipping item older than 6 months: Jun 8, 2025
+2025-06-16 19:23:49,366 - WARNING - Could not parse date format: Jun 8, 2025
+2025-06-16 19:23:49,366 - INFO - Skipping item older than 6 months: Jun 8, 2025
+2025-06-16 19:23:49,366 - WARNING - Could not parse date format: Jun 8, 2025
+2025-06-16 19:23:49,366 - INFO - Skipping item older than 6 months: Jun 8, 2025
+2025-06-16 19:23:49,368 - WARNING - Could not parse date format: Jun 8, 2025
+2025-06-16 19:23:49,368 - INFO - Skipping item older than 6 months: Jun 8, 2025
+2025-06-16 19:23:49,369 - WARNING - Could not parse date format: Jun 8, 2025
+2025-06-16 19:23:49,369 - INFO - Skipping item older than 6 months: Jun 8, 2025
+2025-06-16 19:23:49,370 - WARNING - Could not parse date format: Jun 7, 2025
+2025-06-16 19:23:49,371 - INFO - Skipping item older than 6 months: Jun 7, 2025
+2025-06-16 19:23:49,372 - WARNING - Could not parse date format: Jun 7, 2025
+2025-06-16 19:23:49,373 - INFO - Skipping item older than 6 months: Jun 7, 2025
+2025-06-16 19:23:49,373 - WARNING - Could not parse date format: Jun 6, 2025
+2025-06-16 19:23:49,373 - INFO - Skipping item older than 6 months: Jun 6, 2025
+2025-06-16 19:23:49,375 - WARNING - Could not parse date format: Jun 6, 2025
+2025-06-16 19:23:49,375 - INFO - Skipping item older than 6 months: Jun 6, 2025
+2025-06-16 19:23:49,375 - WARNING - Could not parse date format: Jun 6, 2025
+2025-06-16 19:23:49,376 - INFO - Skipping item older than 6 months: Jun 6, 2025
+2025-06-16 19:23:49,376 - WARNING - Could not parse date format: Jun 5, 2025
+2025-06-16 19:23:49,376 - INFO - Skipping item older than 6 months: Jun 5, 2025
+2025-06-16 19:23:49,377 - WARNING - Could not parse date format: Jun 5, 2025
+2025-06-16 19:23:49,377 - INFO - Skipping item older than 6 months: Jun 5, 2025
+2025-06-16 19:23:49,378 - WARNING - Could not parse date format: Jun 5, 2025
+2025-06-16 19:23:49,378 - INFO - Skipping item older than 6 months: Jun 5, 2025
+2025-06-16 19:23:49,380 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,380 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,381 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,381 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,382 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,382 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,382 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,382 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,382 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,384 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,384 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,385 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,386 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,386 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,391 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,391 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,393 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,393 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,393 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,393 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,396 - WARNING - Could not parse date format: Jun 4, 2025
+2025-06-16 19:23:49,398 - INFO - Skipping item older than 6 months: Jun 4, 2025
+2025-06-16 19:23:49,399 - WARNING - Could not parse date format: Jun 3, 2025
+2025-06-16 19:23:49,399 - INFO - Skipping item older than 6 months: Jun 3, 2025
+2025-06-16 19:23:49,401 - WARNING - Could not parse date format: Jun 3, 2025
+2025-06-16 19:23:49,401 - INFO - Skipping item older than 6 months: Jun 3, 2025
+2025-06-16 19:23:49,402 - INFO - Finished processing sales data. Processed 62 items, added 0 items to database.
+2025-06-16 19:28:07,554 - INFO - Fetching eBay sales data...
+2025-06-16 19:28:08,266 - INFO - Response status code: 200
+2025-06-16 19:28:08,543 - INFO - Found 2 items
+2025-06-16 19:28:08,557 - INFO - Database setup completed successfully
+2025-06-16 19:28:08,557 - INFO - Finished processing sales data. Processed 2 items, added 0 items to database.
+2025-06-16 19:32:14,981 - INFO - Fetching eBay sales data...
+2025-06-16 19:32:15,790 - INFO - Response status code: 200
+2025-06-16 19:32:15,999 - INFO - Found 2 items
+2025-06-16 19:32:16,008 - INFO - Database setup completed successfully
+2025-06-16 19:32:16,008 - INFO - Finished processing sales data. Processed 2 items, added 0 items to database.
+2025-06-16 19:36:56,642 - INFO - Fetching eBay sales data...
+2025-06-16 19:36:57,503 - INFO - Response status code: 200
+2025-06-16 19:36:57,717 - INFO - Found 62 items
+2025-06-16 19:36:57,719 - INFO - Database setup completed successfully
+2025-06-16 19:36:57,727 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,727 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,727 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,727 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,735 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,736 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,736 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,736 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,739 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,742 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,743 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,745 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,745 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,745 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,750 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,753 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,753 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,753 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,753 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,753 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,753 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,761 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,761 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,761 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,761 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,761 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,761 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,769 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,770 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,770 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,772 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,772 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,772 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,776 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,778 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,778 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,778 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,783 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,783 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,783 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,786 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,786 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,786 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,786 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,786 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,786 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,794 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,794 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,794 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,794 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,794 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,801 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,801 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,803 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,803 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,807 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,808 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,808 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,808 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,812 - ERROR - Error processing item: table card_prices has no column named sale_date
+2025-06-16 19:36:57,812 - INFO - Finished processing sales data. Processed 62 items, added 0 items to database.
+2025-06-16 19:42:34,557 - INFO - Fetching eBay sales data...
+2025-06-16 19:42:35,406 - INFO - Response status code: 200
+2025-06-16 19:42:35,628 - INFO - Found 2 items
+2025-06-16 19:42:35,644 - INFO - Database setup completed successfully
+2025-06-16 19:42:35,648 - INFO - Finished processing sales data. Processed 2 items, added 0 items to database.

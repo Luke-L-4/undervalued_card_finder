@@ -1,11 +1,8 @@
-requests
+requests>=2.32.4
+beautifulsoup4>=4.13.4
 pandas
 sqlalchemy
 python-dotenv
-schedule
-pymongo
 flask
 plotly
-ebaysdk
 python-dateutil
-gunicorn
