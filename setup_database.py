@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 def setup_database():
     """Create and set up the database with proper schema"""
     try:
-        # Connect to database (this will create it if it doesn't exist)
+        # Connect to database
         conn = sqlite3.connect('card_prices.db')
         cursor = conn.cursor()
         

@@ -55,18 +55,12 @@ def latest_prices(card_name):
 @app.route('/api/sales-history/<card_name>')
 def sales_history(card_name):
     conn = get_db_connection()
-    
-    # First, let's see what card names exist in the database
     cursor = conn.cursor()
+    
     cursor.execute('SELECT DISTINCT card_name FROM card_prices')
     all_cards = [row[0] for row in cursor.fetchall()]
-    print("\nAll card names in database:")
-    for card in all_cards:
-        print(f"- {card}")
     
-    # Now search with LIKE
     search_pattern = f'%{card_name}%'
-    print(f"\nSearching for pattern: {search_pattern}")
     
     query = '''
     SELECT card_name, price, sale_date, listing_url
@@ -75,11 +69,6 @@ def sales_history(card_name):
     ORDER BY sale_date DESC
     '''
     data = cursor.execute(query, (search_pattern,)).fetchall()
-    
-    # Print what we found
-    print("\nMatching cards:")
-    for row in data:
-        print(f"- {row[0]}")
     
     conn.close()
     return jsonify([dict(row) for row in data])

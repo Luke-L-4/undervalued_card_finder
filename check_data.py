@@ -4,12 +4,10 @@ def check_database():
     conn = sqlite3.connect('card_prices.db')
     cursor = conn.cursor()
     
-    # Check if we have any data
     cursor.execute('SELECT COUNT(*) FROM card_prices')
     total_count = cursor.fetchone()[0]
     print(f"Total records in database: {total_count}")
     
-    # Check Victor Wembanyama data specifically
     cursor.execute('''
         SELECT card_name, price, sale_date, listing_url
         FROM card_prices
