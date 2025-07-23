@@ -21,6 +21,10 @@
             max-width: 300px;
             margin: 20px auto;
         }
+        .table-responsive {
+            max-height: 400px;
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body>
@@ -137,12 +141,15 @@
         }
 
         function updateSalesHistory(cardName) {
-            fetch(`/api/sales-history/${encodeURIComponent(cardName)}`)
+            let endpoint = `/api/sales-history/${encodeURIComponent(cardName)}`;
+            if (cardName === "victor_wembanyama") {
+                endpoint = `/api/sales-history-no-outliers/${encodeURIComponent(cardName)}`;
+            }
+            fetch(endpoint)
                 .then(response => response.json())
                 .then(data => {
                     const tableBody = document.getElementById('salesTableBody');
                     tableBody.innerHTML = '';
-                    
                     if (data && data.length > 0) {
                         data.forEach(sale => {
                             const row = document.createElement('tr');

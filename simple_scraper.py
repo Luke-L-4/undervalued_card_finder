@@ -201,5 +201,106 @@ def get_ebay_sales():
         print(f"Error fetching eBay data: {str(e)}")
         raise
 
+def get_ebay_sales_multiple_pages(max_pages=5):
+    """Scrape multiple pages of eBay for Victor Wembanyama #136 Silver Prizm RC PSA 10 sales and store in a new table."""
+    print("Starting multi-page scraper...")
+    base_url = "https://www.ebay.com/sch/i.html?_nkw=victor+webanyama+prizm+%23136+silver+prizm+psa+10+rc&_sacat=0&_from=R40&_trksid=m570.l1313&_odkw=victor+webanyama+prizm+%23+136+silver+prizm+psa+10+rc&_osacat=0&LH_Complete=1&LH_Sold=1"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Cache-Control': 'max-age=0',
+        'DNT': '1'
+    }
+
+    conn = sqlite3.connect('card_prices.db')
+    cursor = conn.cursor()
+    # Create the new table if it doesn't exist
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS multiple_pages_wemby (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            card_name TEXT NOT NULL,
+            title TEXT NOT NULL,
+            price REAL NOT NULL,
+            sale_date TEXT,
+            listing_url TEXT NOT NULL,
+            timestamp TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+
+    for page in range(1, max_pages + 1):
+        url = f"{base_url}&_pgn={page}"
+        print(f"Scraping page {page}: {url}")
+        try:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            items = soup.select('li.s-item')
+            print(f"Found {len(items)} items on page {page}")
+            if not items:
+                print("No more items found, stopping.")
+                break
+            for item in items:
+                try:
+                    title_elem = item.select_one('div.s-item__title')
+                    if not title_elem:
+                        continue
+                    title = title_elem.text.strip()
+                    price_elem = item.select_one('span.s-item__price')
+                    if not price_elem:
+                        continue
+                    price_text = price_elem.text.strip()
+                    price = float(price_text.replace('$', '').replace(',', ''))
+                    date_elem = item.select_one('span.s-item__caption--signal')
+                    sale_date = None
+                    if date_elem:
+                        date_text = date_elem.text.strip()
+                        if 'Sold' in date_text:
+                            date_text = date_text.replace('Sold', '').strip()
+                            try:
+                                parsed_date = datetime.strptime(date_text, '%b %d, %Y')
+                                sale_date = parsed_date
+                            except ValueError as e:
+                                print(f"Could not parse date '{date_text}': {str(e)}")
+                    if not sale_date:
+                        continue
+                    link_elem = item.select_one('a.s-item__link')
+                    listing_url = link_elem['href'] if link_elem else None
+                    if not listing_url:
+                        continue
+                    cursor.execute('''
+                        INSERT INTO multiple_pages_wemby 
+                        (card_name, title, price, sale_date, listing_url, timestamp)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                    ''', (
+                        'victor wembanyama prizm #136 silver prizm psa 10 rc',
+                        title,
+                        price,
+                        sale_date.strftime('%Y-%m-%d'),
+                        listing_url,
+                        datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+                    ))
+                    print(f"Added to multiple_pages_wemby: {title}")
+                except Exception as e:
+                    logger.error(f"Error processing item: {str(e)}")
+                    print(f"Error processing item: {str(e)}")
+                    continue
+            conn.commit()
+            time.sleep(random.uniform(1, 3))
+        except Exception as e:
+            logger.error(f"Error fetching eBay data on page {page}: {str(e)}")
+            print(f"Error fetching eBay data on page {page}: {str(e)}")
+            break
+    conn.close()
+    print("Finished multi-page scraping.")
+
 if __name__ == "__main__":
     get_ebay_sales() 

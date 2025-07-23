@@ -73,6 +73,25 @@ def sales_history(card_name):
     conn.close()
     return jsonify([dict(row) for row in data])
 
+@app.route('/api/sales-history-no-outliers/<card_name>')
+def sales_history_no_outliers(card_name):
+    conn = get_db_connection()
+    df = pd.read_sql_query(
+        "SELECT card_name, price, sale_date, listing_url FROM card_prices WHERE card_name LIKE ? ORDER BY sale_date DESC",
+        conn,
+        params=(f'%{card_name}%',)
+    )
+    conn.close()
+    if not df.empty:
+        # Remove outliers using IQR
+        Q1 = df['price'].quantile(0.25)
+        Q3 = df['price'].quantile(0.75)
+        IQR = Q3 - Q1
+        lower = Q1 - 1.5 * IQR
+        upper = Q3 + 1.5 * IQR
+        df = df[(df['price'] >= lower) & (df['price'] <= upper)]
+    return jsonify(df.to_dict(orient='records'))
+
 @app.route('/api/cards')
 def get_cards():
     conn = get_db_connection()
